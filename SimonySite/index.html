@@ -22,20 +22,18 @@ body {
 
 /* QUADRO INFO PERFIL */
 .profile-info {
-  /* position: fixed;  Remover ou substituir */
-  position: absolute;  /* Agora fica na posição inicial e rola com a página */
+  position: fixed;
   top: 20px;
   left: 20px;
   width: 300px;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(5px);
+  background: rgba(0,0,0,0.85);
   color: var(--amarelo);
   padding: 20px;
   border-radius: 12px;
   font-size: 14px;
   line-height: 1.5;
-  box-shadow: 0 0 20px rgba(255,215,0,0.3);
-  z-index: 10; /* menor que elementos fixos, se precisar */
+  z-index: 1001;
+  box-shadow: 0 0 15px rgba(255,215,0,0.4);
 }
 
 .profile-info h4 {
@@ -94,20 +92,19 @@ body {
   transform: scale(1.05);
 }
 
-.hero h1, .hero h2, .hero p, .btn {
-  position: relative;
-  z-index: 1;
-}
-
 .hero h1 {
   font-size: 48px;
   margin: 10px 0 5px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero h2 {
   color: var(--branco);
   font-weight: normal;
   margin: 5px 0 15px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero p {
@@ -115,6 +112,8 @@ body {
   max-width: 550px;
   margin-bottom: 20px;
   line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
 /* BOTÃO */
@@ -130,6 +129,8 @@ body {
   text-decoration: none;
   font-size: 18px;
   transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
 }
 
 .btn:hover {
@@ -295,7 +296,7 @@ body {
 <section class="hero">
   <h1 class="big-bg">Simony Santos</h1>
   <div class="hero-content">
-    <img src="foto.jpg" alt="Simony Santos">
+    <img src="images/foto.jpg" alt="Simony Santos">
   </div>
 
   <h1>Simony Santos</h1>
@@ -313,10 +314,10 @@ body {
 <section class="poses">
   <h3>Posições de Pilates</h3>
   <div class="poses-gallery">
-    <img src="pilates.jpg" alt="Posição 1">
-    <img src="pilates1.jpg" alt="Posição 2">
-    <img src="pilates2.jpg" alt="Posição 3">
-    <img src="pilates3.jpg" alt="Posição 4">
+    <img src="images/pilates.jpg" alt="Posição 1">
+    <img src="images/pilates1.jpg" alt="Posição 2">
+    <img src="images/pilates2.jpg" alt="Posição 3">
+    <img src="images/pilates3.jpg" alt="Posição 4">
   </div>
 </section>
 
