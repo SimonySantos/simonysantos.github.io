@@ -1,387 +1,326 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Simony Santos - Personal Trainer & Pilates</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Simony Santos - Personal Trainer & Pilates</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-  --preto: #000;
-  --branco: #fff;
-  --amarelo: #FFD700;
-}
+  <style>
+    :root {
+      --preto: #000;
+      --branco: #fff;
+      --amarelo: #FFD700;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--preto);
-  color: var(--amarelo);
-  position: relative;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--preto);
+      color: var(--amarelo);
+    }
 
-/* QUADRO INFO PERFIL */
-.profile-info {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 300px;
-  background: rgba(0,0,0,0.85);
-  color: var(--amarelo);
-  padding: 20px;
-  border-radius: 12px;
-  font-size: 14px;
-  line-height: 1.5;
-  z-index: 1001;
-  box-shadow: 0 0 15px rgba(255,215,0,0.4);
-}
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: var(--preto);
+      color: var(--amarelo);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-.profile-info h4 {
-  margin: 0 0 10px 0;
-  font-size: 16px;
-}
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
 
-/* HERO */
-.hero {
-  min-height: 100vh;
-  background: var(--preto);
-  color: var(--amarelo);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px 20px;
-  position: relative;
-  overflow: hidden;
-}
+    .hero img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 4px solid var(--amarelo);
+      transition: transform 0.3s;
+    }
 
-.hero h1.big-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 120px;
-  color: rgba(255,215,0,0.1);
-  white-space: nowrap;
-  z-index: 0;
-  pointer-events: none;
-}
+    .hero img:hover {
+      transform: scale(1.05);
+    }
 
-.hero-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
+    .hero h1 {
+      font-size: 48px;
+      margin: 10px 0 5px;
+    }
 
-.hero img {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border: 4px solid var(--amarelo);
-  transition: transform 0.3s;
-}
+    .hero h2 {
+      color: var(--branco);
+      font-weight: normal;
+      margin: 5px 0 15px;
+    }
 
-.hero img:hover {
-  transform: scale(1.05);
-}
+    .hero p {
+      color: var(--branco);
+      max-width: 550px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
 
-.hero h1 {
-  font-size: 48px;
-  margin: 10px 0 5px;
-  position: relative;
-  z-index: 1;
-}
+    /* BOTÃO */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 40px;
+      background: var(--amarelo);
+      color: var(--preto);
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-.hero h2 {
-  color: var(--branco);
-  font-weight: normal;
-  margin: 5px 0 15px;
-  position: relative;
-  z-index: 1;
-}
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px var(--amarelo);
+    }
 
-.hero p {
-  color: var(--branco);
-  max-width: 550px;
-  margin-bottom: 20px;
-  line-height: 1.6;
-  position: relative;
-  z-index: 1;
-}
+    /* ÍCONES FIXOS DO LADO DIREITO */
+    .social {
+      position: fixed;
+      right: 20px;
+      bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1000;
+    }
 
-/* BOTÃO */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 40px;
-  background: var(--amarelo);
-  color: var(--preto);
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 18px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  position: relative;
-  z-index: 1;
-}
+    .social img {
+      width: 56px;
+      height: 56px;
+      transition: transform 0.2s;
+    }
 
-.btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px var(--amarelo);
-}
+    .social img:hover {
+      transform: scale(1.15);
+    }
 
-/* ÍCONES FIXOS DO LADO DIREITO */
-.social {
-  position: fixed;
-  right: 20px;
-  bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 1000;
-}
+    /* SEÇÃO GALERIA DE POSIÇÕES */
+    .poses {
+      background: var(--preto);
+      color: var(--amarelo);
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-.social img {
-  width: 56px;
-  height: 56px;
-  transition: transform 0.2s;
-}
+    .poses h3 {
+      margin-bottom: 20px;
+      color: var(--amarelo);
+    }
 
-.social img:hover {
-  transform: scale(1.15);
-}
+    .poses-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-/* SEÇÃO GALERIA DE POSIÇÕES */
-.poses {
-  background: var(--preto);
-  color: var(--amarelo);
-  padding: 40px 20px;
-  text-align: center;
-}
+    .poses-gallery img {
+      width: 200px;
+      border-radius: 12px;
+      border: 2px solid var(--amarelo);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.poses h3 {
-  margin-bottom: 20px;
-  color: var(--amarelo);
-}
+    .poses-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px var(--amarelo);
+    }
 
-.poses-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+    /* SEÇÕES BRANCAS */
+    .section {
+      background: var(--branco);
+      color: var(--preto);
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-.poses-gallery img {
-  width: 200px;
-  border-radius: 12px;
-  border: 2px solid var(--amarelo);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+    .section h3 {
+      margin-bottom: 40px;
+    }
 
-.poses-gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--amarelo);
-}
+    /* CARDS */
+    .cards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-/* SEÇÕES BRANCAS */
-.section {
-  background: var(--branco);
-  color: var(--preto);
-  padding: 60px 20px;
-  text-align: center;
-}
+    .card {
+      border: 2px solid var(--amarelo);
+      padding: 30px;
+      border-radius: 12px;
+      width: 250px;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-.section h3 {
-  margin-bottom: 40px;
-}
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px var(--amarelo);
+    }
 
-/* CARDS */
-.cards {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+    /* BALÕES DE PREÇOS */
+    .price-card {
+      background: var(--preto);
+      color: var(--amarelo);
+      font-size: 18px;
+      padding: 35px;
+      border-radius: 20px;
+      border: 3px solid var(--amarelo);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.card {
-  border: 2px solid var(--amarelo);
-  padding: 30px;
-  border-radius: 12px;
-  width: 250px;
-  font-weight: bold;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
+    .price-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px var(--amarelo);
+    }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--amarelo);
-}
+    /* BENEFÍCIOS */
+    .benefits {
+      background: var(--preto);
+      color: var(--amarelo);
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-/* BALÕES DE PREÇOS */
-.price-card {
-  background: var(--preto);      
-  color: var(--amarelo);         
-  font-size: 18px;               
-  padding: 35px;                 
-  border-radius: 20px;           
-  border: 3px solid var(--amarelo);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+    .benefit-list {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-.price-card:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px var(--amarelo);
-}
+    .benefit {
+      border: 2px solid var(--amarelo);
+      padding: 25px;
+      border-radius: 12px;
+      width: 220px;
+      background: #111;
+    }
 
-/* BENEFÍCIOS */
-.benefits {
-  background: var(--preto);
-  color: var(--amarelo);
-  padding: 60px 20px;
-  text-align: center;
-}
+    /* FOOTER */
+    .footer {
+      background: var(--preto);
+      color: var(--amarelo);
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 16px;
+    }
 
-.benefit-list {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+    .footer a {
+      color: var(--amarelo);
+      text-decoration: none;
+    }
 
-.benefit {
-  border: 2px solid var(--amarelo);
-  padding: 25px;
-  border-radius: 12px;
-  width: 220px;
-  background: #111;
-}
-
-/* FOOTER */
-.footer {
-  background: var(--preto);
-  color: var(--amarelo);
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 16px;
-}
-
-.footer a {
-  color: var(--amarelo);
-  text-decoration: none;
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-<!-- QUADRO DE INFORMAÇÕES PERFIL -->
-<div class="profile-info">
-  <h4>Nome: Simony Santos</h4>
-  <p>Idade: 40 anos</p>
-  <p>Nacionalidade: Brasileira</p>
-  <p>Sobre mim: Sou professora há mais de 20 anos, com ampla experiência na área e em grandes redes de ginásio do Rio de Janeiro como BodyTech e SmartFit.</p>
-  <p>Adoro animais, amo ficar com meu pet e passear.</p>
-  <p>Adoro viajar, sou uma viajante do tempo e do mundo que ainda tem muito a descobrir.</p>
-</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="images/foto.jpg" alt="Simony Santos">
+    </div>
 
-<!-- HERO -->
-<section class="hero">
-  <h1 class="big-bg">Simony Santos</h1>
-  <div class="hero-content">
-    <img src="images/foto.jpg" alt="Simony Santos">
-  </div>
+    <h1>Simony Santos</h1>
+    <h2>Personal Trainer & Pilates</h2>
 
-  <h1>Simony Santos</h1>
-  <h2>Personal Trainer & Pilates</h2>
+    <p>
+      Atendimento personalizado para mulheres e homens.<br>
+      Aulas presenciais e online focadas em saúde, força, postura e bem-estar.
+    </p>
 
-  <p>
-    Atendimento personalizado para mulheres e homens.<br>
-    Aulas presenciais e online focadas em saúde, força, postura e bem-estar.
-  </p>
+    <a class="btn" href="https://wa.me/351937763616" target="_blank">📲 Agende sua aula</a>
+  </section>
 
-  <a class="btn" href="https://wa.me/351937763616" target="_blank">📲 Agende sua aula</a>
-</section>
+  <!-- GALERIA DE POSIÇÕES -->
+  <section class="poses">
+    <h3>Posições de Pilates</h3>
+    <div class="poses-gallery">
+      <img src="images/pilates.jpg" alt="Posição 1">
+      <img src="images/pilates1.jpg" alt="Posição 2">
+      <img src="images/pilates2.jpg" alt="Posição 3">
+      <img src="images/pilates3.jpg" alt="Posição 4">
+    </div>
+  </section>
 
-<!-- GALERIA DE POSIÇÕES -->
-<section class="poses">
-  <h3>Posições de Pilates</h3>
-  <div class="poses-gallery">
-    <img src="images/pilates.jpg" alt="Posição 1">
-    <img src="images/pilates1.jpg" alt="Posição 2">
-    <img src="images/pilates2.jpg" alt="Posição 3">
-    <img src="images/pilates3.jpg" alt="Posição 4">
-  </div>
-</section>
-
-<!-- ÍCONES FIXOS -->
-<div class="social">
-  <a href="https://wa.me/351937763616?text=Olá%20Simony,%20quero%20agendar%20uma%20aula!" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-  </a>
-  <a href="https://www.instagram.com/simonyedfisica" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-  </a>
-</div>
-
-<!-- SERVIÇOS -->
-<section class="section">
-  <h3>Serviços</h3>
-  <div class="cards">
-    <div class="card">Personal Trainer</div>
-    <div class="card">Pilates</div>
-    <div class="card">Aulas Presenciais & Online</div>
-  </div>
-</section>
-
-<!-- BENEFÍCIOS -->
-<section class="benefits">
-  <h3>Benefícios</h3>
-  <div class="benefit-list">
-    <div class="benefit">Mais força e resistência</div>
-    <div class="benefit">Melhora da postura</div>
-    <div class="benefit">Qualidade de vida e bem-estar</div>
-  </div>
-</section>
-
-<!-- PACOTES & PREÇOS -->
-<section class="section">
-  <h3>Pacotes & Preços</h3>
-  <div class="cards">
-    <a class="card price-card" 
-       href="https://wa.me/351937763616?text=Olá%20Simony,%20quero%20mais%20informações%20sobre%20o%20Treino%20Presencial" 
-       target="_blank">
-      <strong>Treino Presencial</strong><br>
-      1h de treino: 40€<br>
-      Pacote 2x/semana: 75€<br>
-      Pacote 3x/semana: 110€
+  <!-- ÍCONES FIXOS -->
+  <div class="social">
+    <a href="https://wa.me/351937763616?text=Olá%20Simony,%20quero%20agendar%20uma%20aula!" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     </a>
-
-    <a class="card price-card" 
-       href="https://wa.me/351937763616?text=Olá%20Simony,%20quero%20mais%20informações%20sobre%20o%20Treino%20Online" 
-       target="_blank">
-      <strong>Treino Online</strong><br>
-      1h de treino: 35€<br>
-      Pacote 2x/semana: 65€<br>
-      Pacote 3x/semana: 100€
+    <a href="https://www.instagram.com/simonyedfisica" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
     </a>
   </div>
-</section>
 
-<!-- FOOTER -->
-<section class="footer">
-  <p>Entre em contato agora e comece sua transformação!</p>
-  <p>Email: <a href="mailto:simonyantosedfisica@gmail.com">simonyantosedfisica@gmail.com</a></p>
-  <p>Horário de atendimento: 9h às 18h, de segunda a sexta-feira</p>
-  <p>Atendimento em casa</p>
-</section>
+  <!-- SERVIÇOS -->
+  <section class="section">
+    <h3>Serviços</h3>
+    <div class="cards">
+      <div class="card">Personal Trainer</div>
+      <div class="card">Pilates</div>
+      <div class="card">Aulas Presenciais & Online</div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="benefits">
+    <h3>Benefícios</h3>
+    <div class="benefit-list">
+      <div class="benefit">Mais força e resistência</div>
+      <div class="benefit">Melhora da postura</div>
+      <div class="benefit">Qualidade de vida e bem-estar</div>
+    </div>
+  </section>
+
+  <!-- PACOTES & PREÇOS -->
+  <section class="section">
+    <h3>Pacotes & Preços</h3>
+    <div class="cards">
+      <a class="card price-card" href="https://wa.me/351937763616?text=Olá%20Simony,%20quero%20mais%20informações%20sobre%20o%20Treino%20Presencial" target="_blank">
+        <strong>Treino Presencial</strong><br>
+        1h de treino: 40€<br>
+        Pacote 2x/semana: 75€<br>
+        Pacote 3x/semana: 110€
+      </a>
+      <a class="card price-card" href="https://wa.me/351937763616?text=Olá%20Simony,%20quero%20mais%20informações%20sobre%20o%20Treino%20Online" target="_blank">
+        <strong>Treino Online</strong><br>
+        1h de treino: 35€<br>
+        Pacote 2x/semana: 65€<br>
+        Pacote 3x/semana: 100€
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer">
+    <p>Entre em contato agora e comece sua transformação!</p>
+    <p>Email: <a href="mailto:simonyantosedfisica@gmail.com">simonyantosedfisica@gmail.com</a></p>
+    <p>Horário de atendimento: 9h às 18h, de segunda a sexta-feira</p>
+    <p>Atendimento em casa</p>
+  </section>
 
 </body>
 </html>
