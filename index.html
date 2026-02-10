@@ -17,6 +17,30 @@ body {
   font-family: Arial, sans-serif;
   background: var(--preto);
   color: var(--amarelo);
+  position: relative;
+}
+
+/* QUADRO INFO PERFIL */
+.profile-info {
+  /* position: fixed;  Remover ou substituir */
+  position: absolute;  /* Agora fica na posição inicial e rola com a página */
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(5px);
+  color: var(--amarelo);
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 0 20px rgba(255,215,0,0.3);
+  z-index: 10; /* menor que elementos fixos, se precisar */
+}
+
+.profile-info h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
 }
 
 /* HERO */
@@ -30,6 +54,20 @@ body {
   align-items: center;
   text-align: center;
   padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1.big-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  color: rgba(255,215,0,0.1);
+  white-space: nowrap;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -39,6 +77,8 @@ body {
   align-items: center;
   gap: 30px;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero img {
@@ -52,6 +92,11 @@ body {
 
 .hero img:hover {
   transform: scale(1.05);
+}
+
+.hero h1, .hero h2, .hero p, .btn {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -179,6 +224,22 @@ body {
   box-shadow: 0 0 15px var(--amarelo);
 }
 
+/* BALÕES DE PREÇOS */
+.price-card {
+  background: var(--preto);      
+  color: var(--amarelo);         
+  font-size: 18px;               
+  padding: 35px;                 
+  border-radius: 20px;           
+  border: 3px solid var(--amarelo);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.price-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px var(--amarelo);
+}
+
 /* BENEFÍCIOS */
 .benefits {
   background: var(--preto);
@@ -202,23 +263,6 @@ body {
   background: #111;
 }
 
-/* DEPOIMENTOS */
-.testimonials {
-  background: var(--branco);
-  color: var(--preto);
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.testimonial-card {
-  border: 2px solid var(--amarelo);
-  padding: 25px;
-  border-radius: 12px;
-  width: 250px;
-  margin: 10px;
-  font-style: italic;
-}
-
 /* FOOTER */
 .footer {
   background: var(--preto);
@@ -237,11 +281,21 @@ body {
 
 <body>
 
+<!-- QUADRO DE INFORMAÇÕES PERFIL -->
+<div class="profile-info">
+  <h4>Nome: Simony Santos</h4>
+  <p>Idade: 40 anos</p>
+  <p>Nacionalidade: Brasileira</p>
+  <p>Sobre mim: Sou professora há mais de 20 anos, com ampla experiência na área e em grandes redes de ginásio do Rio de Janeiro como BodyTech e SmartFit.</p>
+  <p>Adoro animais, amo ficar com meu pet e passear.</p>
+  <p>Adoro viajar, sou uma viajante do tempo e do mundo que ainda tem muito a descobrir.</p>
+</div>
+
 <!-- HERO -->
 <section class="hero">
+  <h1 class="big-bg">Simony Santos</h1>
   <div class="hero-content">
-    <img src="images/foto.jpg" alt="Simony Santos">
-
+    <img src="foto.jpg" alt="Simony Santos">
   </div>
 
   <h1>Simony Santos</h1>
@@ -259,10 +313,10 @@ body {
 <section class="poses">
   <h3>Posições de Pilates</h3>
   <div class="poses-gallery">
-    <img src="images/pilates.jpg" alt="Posição 1">
-    <img src="images/pilates1.jpg" alt="Posição 2">
-    <img src="images/pilates2.jpg" alt="Posição 3">
-    <img src="images/pilates3.jpg" alt="Posição 4">
+    <img src="pilates.jpg" alt="Posição 1">
+    <img src="pilates1.jpg" alt="Posição 2">
+    <img src="pilates2.jpg" alt="Posição 3">
+    <img src="pilates3.jpg" alt="Posição 4">
   </div>
 </section>
 
@@ -296,12 +350,27 @@ body {
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="testimonials">
-  <h3>Depoimentos</h3>
+<!-- PACOTES & PREÇOS -->
+<section class="section">
+  <h3>Pacotes & Preços</h3>
   <div class="cards">
-    <div class="testimonial-card">"Simony mudou minha postura e minha rotina!"</div>
-    <div class="testimonial-card">"Melhorei minha força e flexibilidade com suas aulas."</div>
+    <a class="card price-card" 
+       href="https://wa.me/351937763616?text=Olá%20Simony,%20quero%20mais%20informações%20sobre%20o%20Treino%20Presencial" 
+       target="_blank">
+      <strong>Treino Presencial</strong><br>
+      1h de treino: 40€<br>
+      Pacote 2x/semana: 75€<br>
+      Pacote 3x/semana: 110€
+    </a>
+
+    <a class="card price-card" 
+       href="https://wa.me/351937763616?text=Olá%20Simony,%20quero%20mais%20informações%20sobre%20o%20Treino%20Online" 
+       target="_blank">
+      <strong>Treino Online</strong><br>
+      1h de treino: 35€<br>
+      Pacote 2x/semana: 65€<br>
+      Pacote 3x/semana: 100€
+    </a>
   </div>
 </section>
 
@@ -310,7 +379,7 @@ body {
   <p>Entre em contato agora e comece sua transformação!</p>
   <p>Email: <a href="mailto:simonyantosedfisica@gmail.com">simonyantosedfisica@gmail.com</a></p>
   <p>Horário de atendimento: 9h às 18h, de segunda a sexta-feira</p>
-  <p>Atendimento em residencia</p>
+  <p>Atendimento em casa</p>
 </section>
 
 </body>
