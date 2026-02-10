@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Simony Santos - Personal Trainer & Pilates</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 :root {
   --preto: #000;
@@ -13,7 +14,7 @@
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background: var(--preto);
   color: var(--amarelo);
 }
@@ -31,13 +32,21 @@ body {
   padding: 40px 20px;
 }
 
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
 .hero img {
   border-radius: 50%;
   width: 200px;
   height: 200px;
   object-fit: cover;
   border: 4px solid var(--amarelo);
-  margin-bottom: 20px;
   transition: transform 0.3s;
 }
 
@@ -47,22 +56,23 @@ body {
 
 .hero h1 {
   font-size: 48px;
-  margin: 0;
+  margin: 10px 0 5px;
 }
 
 .hero h2 {
   color: var(--branco);
   font-weight: normal;
-  margin: 10px 0 20px;
+  margin: 5px 0 15px;
 }
 
 .hero p {
   color: var(--branco);
   max-width: 550px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   line-height: 1.6;
 }
 
+/* BOTÃO */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -82,7 +92,60 @@ body {
   box-shadow: 0 0 15px var(--amarelo);
 }
 
-/* SEÇÃO SERVIÇOS */
+/* ÍCONES FIXOS DO LADO DIREITO */
+.social {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.social img {
+  width: 56px;
+  height: 56px;
+  transition: transform 0.2s;
+}
+
+.social img:hover {
+  transform: scale(1.15);
+}
+
+/* SEÇÃO GALERIA DE POSIÇÕES */
+.poses {
+  background: var(--preto);
+  color: var(--amarelo);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.poses h3 {
+  margin-bottom: 20px;
+  color: var(--amarelo);
+}
+
+.poses-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.poses-gallery img {
+  width: 200px;
+  border-radius: 12px;
+  border: 2px solid var(--amarelo);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.poses-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--amarelo);
+}
+
+/* SEÇÕES BRANCAS */
 .section {
   background: var(--branco);
   color: var(--preto);
@@ -92,9 +155,9 @@ body {
 
 .section h3 {
   margin-bottom: 40px;
-  color: var(--preto);
 }
 
+/* CARDS */
 .cards {
   display: flex;
   gap: 20px;
@@ -124,11 +187,6 @@ body {
   text-align: center;
 }
 
-.benefits h3 {
-  margin-bottom: 40px;
-  color: var(--amarelo);
-}
-
 .benefit-list {
   display: flex;
   gap: 20px;
@@ -152,11 +210,6 @@ body {
   text-align: center;
 }
 
-.testimonials h3 {
-  margin-bottom: 40px;
-  color: var(--preto);
-}
-
 .testimonial-card {
   border: 2px solid var(--amarelo);
   padding: 25px;
@@ -174,23 +227,56 @@ body {
   padding: 40px 20px;
   font-size: 16px;
 }
+
+.footer a {
+  color: var(--amarelo);
+  text-decoration: none;
+}
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
-  <!-- FOTO LOCAL: coloque a imagem na mesma pasta do index.html -->
-  <img src="images/foto.jpg" alt="Simony Santos">
+  <div class="hero-content">
+    <img src="foto.jpg" alt="Simony Santos">
+
+  </div>
+
   <h1>Simony Santos</h1>
   <h2>Personal Trainer & Pilates</h2>
-  <p>Atendimento personalizado para mulheres e homens.  
-  Aulas presenciais e online focadas em saúde, força, postura e bem-estar.</p>
-  <a class="btn" href="https://wa.me/55SEUNUMERO">
-    📲 Agende sua aula
-  </a>
+
+  <p>
+    Atendimento personalizado para mulheres e homens.<br>
+    Aulas presenciais e online focadas em saúde, força, postura e bem-estar.
+  </p>
+
+  <a class="btn" href="https://wa.me/351937763616" target="_blank">📲 Agende sua aula</a>
 </section>
 
+<!-- GALERIA DE POSIÇÕES -->
+<section class="poses">
+  <h3>Posições de Pilates</h3>
+  <div class="poses-gallery">
+    <img src="pilates.jpg" alt="Posição 1">
+    <img src="pilates1.jpg" alt="Posição 2">
+    <img src="pilates2.jpg" alt="Posição 3">
+    <img src="pilates3.jpg" alt="Posição 4">
+  </div>
+</section>
+
+<!-- ÍCONES FIXOS -->
+<div class="social">
+  <a href="https://wa.me/351937763616?text=Olá%20Simony,%20quero%20agendar%20uma%20aula!" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+  <a href="https://www.instagram.com/simonyedfisica" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+  </a>
+</div>
+
+<!-- SERVIÇOS -->
 <section class="section">
   <h3>Serviços</h3>
   <div class="cards">
@@ -200,6 +286,7 @@ body {
   </div>
 </section>
 
+<!-- BENEFÍCIOS -->
 <section class="benefits">
   <h3>Benefícios</h3>
   <div class="benefit-list">
@@ -209,6 +296,7 @@ body {
   </div>
 </section>
 
+<!-- DEPOIMENTOS -->
 <section class="testimonials">
   <h3>Depoimentos</h3>
   <div class="cards">
@@ -217,11 +305,13 @@ body {
   </div>
 </section>
 
+<!-- FOOTER -->
 <section class="footer">
   <p>Entre em contato agora e comece sua transformação!</p>
+  <p>Email: <a href="mailto:simonyantosedfisica@gmail.com">simonyantosedfisica@gmail.com</a></p>
+  <p>Horário de atendimento: 9h às 18h, de segunda a sexta-feira</p>
+  <p>Atendimento em casa</p>
 </section>
 
 </body>
 </html>
-
-
