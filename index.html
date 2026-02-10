@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Personal Trainer & Pilates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root {
+  --preto: #000;
+  --branco: #fff;
+  --amarelo: #FFD700;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: var(--preto);
+}
+
+.hero {
+  min-height: 100vh;
+  background: var(--preto);
+  color: var(--amarelo);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+.hero h2 {
+  color: var(--branco);
+  font-weight: normal;
+  margin: 10px 0 20px;
+}
+
+.hero p {
+  color: var(--branco);
+  max-width: 500px;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 15px 35px;
+  background: var(--amarelo);
+  color: var(--preto);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.section {
+  background: var(--branco);
+  color: var(--preto);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h3 {
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 2px solid var(--amarelo);
+  padding: 30px;
+  border-radius: 12px;
+  width: 250px;
+}
+
+.footer {
+  background: var(--preto);
+  color: var(--amarelo);
+  text-align: center;
+  padding: 40px 20px;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>SIMONY SANTOS</h1>
+  <h2>Personal Trainer & Pilates</h2>
+  <p>Atendimento personalizado para homens e mulheres.  
+  Aulas presenciais e online focadas em saúde, força e bem-estar.</p>
+  <a class="btn" href="https://wa.me/351937763616">Agende sua aula</a>
+</section>
+
+<section class="section">
+  <h3>Serviços</h3>
+  <div class="cards">
+    <div class="card">Personal Trainer</div>
+    <div class="card">Pilates</div>
+    <div class="card">Presencial & Online</div>
+  </div>
+</section>
+
+<section class="footer">
+  <p>Entre em contato e comece hoje</p>
+</section>
+
+</body>
+</html>
