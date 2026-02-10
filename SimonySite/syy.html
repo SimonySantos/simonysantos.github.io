@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Simony Santos - Personal Trainer & Pilates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root {
+  --preto: #000;
+  --branco: #fff;
+  --amarelo: #FFD700;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: var(--preto);
+  color: var(--amarelo);
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: var(--preto);
+  color: var(--amarelo);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 4px solid var(--amarelo);
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.hero img:hover {
+  transform: scale(1.05);
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero h2 {
+  color: var(--branco);
+  font-weight: normal;
+  margin: 10px 0 20px;
+}
+
+.hero p {
+  color: var(--branco);
+  max-width: 550px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 40px;
+  background: var(--amarelo);
+  color: var(--preto);
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--amarelo);
+}
+
+/* SEÇÃO SERVIÇOS */
+.section {
+  background: var(--branco);
+  color: var(--preto);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h3 {
+  margin-bottom: 40px;
+  color: var(--preto);
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 2px solid var(--amarelo);
+  padding: 30px;
+  border-radius: 12px;
+  width: 250px;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--amarelo);
+}
+
+/* BENEFÍCIOS */
+.benefits {
+  background: var(--preto);
+  color: var(--amarelo);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.benefits h3 {
+  margin-bottom: 40px;
+  color: var(--amarelo);
+}
+
+.benefit-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.benefit {
+  border: 2px solid var(--amarelo);
+  padding: 25px;
+  border-radius: 12px;
+  width: 220px;
+  background: #111;
+}
+
+/* DEPOIMENTOS */
+.testimonials {
+  background: var(--branco);
+  color: var(--preto);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials h3 {
+  margin-bottom: 40px;
+  color: var(--preto);
+}
+
+.testimonial-card {
+  border: 2px solid var(--amarelo);
+  padding: 25px;
+  border-radius: 12px;
+  width: 250px;
+  margin: 10px;
+  font-style: italic;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--preto);
+  color: var(--amarelo);
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <!-- FOTO LOCAL: coloque a imagem na mesma pasta do index.html -->
+  <img src="foto.jpg" alt="Simony Santos">
+  <h1>Simony Santos</h1>
+  <h2>Personal Trainer & Pilates</h2>
+  <p>Atendimento personalizado para mulheres e homens.  
+  Aulas presenciais e online focadas em saúde, força, postura e bem-estar.</p>
+  <a class="btn" href="https://wa.me/55SEUNUMERO">
+    📲 Agende sua aula
+  </a>
+</section>
+
+<section class="section">
+  <h3>Serviços</h3>
+  <div class="cards">
+    <div class="card">Personal Trainer</div>
+    <div class="card">Pilates</div>
+    <div class="card">Aulas Presenciais & Online</div>
+  </div>
+</section>
+
+<section class="benefits">
+  <h3>Benefícios</h3>
+  <div class="benefit-list">
+    <div class="benefit">Mais força e resistência</div>
+    <div class="benefit">Melhora da postura</div>
+    <div class="benefit">Qualidade de vida e bem-estar</div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h3>Depoimentos</h3>
+  <div class="cards">
+    <div class="testimonial-card">"Simony mudou minha postura e minha rotina!"</div>
+    <div class="testimonial-card">"Melhorei minha força e flexibilidade com suas aulas."</div>
+  </div>
+</section>
+
+<section class="footer">
+  <p>Entre em contato agora e comece sua transformação!</p>
+</section>
+
+</body>
+</html>
+
